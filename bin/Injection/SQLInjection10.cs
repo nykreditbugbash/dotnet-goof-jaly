@@ -15,7 +15,7 @@ namespace NETStandaloneBlot.Injection
             using (SqlConnection con = new SqlConnection(""))
             {
                 // CTSECISSUE: SQLInjection
-                SqlCommand sc = new SqlCommand("SELECT * FROM users WHERE ( name = '" + System.Console.ReadLine() + "')", con);
+                SqlCommand sc = new SqlCommand("SELECT * FROM users WHERE ( name = '" + "System.Console.ReadLine()" + "')", con);
                 con.Open();
                 SqlDataReader DR = sc.ExecuteReader();
             }
