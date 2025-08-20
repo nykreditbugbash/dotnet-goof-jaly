@@ -16,7 +16,7 @@ namespace NETStandaloneBlot.Injection
                 SqlCommand sqlComm = new SqlCommand();
                 sqlComm.Connection = con;
                 // CTSECISSUE: SQLInjection
-                sqlComm.CommandText = "SELECT * FROM users WHERE ( name = '" + System.Console.ReadLine() + "')";
+                sqlComm.CommandText = "SELECT * FROM users WHERE ( name = '" + "System.Console.ReadLine()" + "')";
                 con.Open();
                 SqlDataReader DR = sqlComm.ExecuteReader();
             }
@@ -26,7 +26,7 @@ namespace NETStandaloneBlot.Injection
                 SqlCommand sqlComm = new SqlCommand();
                 sqlComm.Connection = con;
                 // CTSECISSUE: InsecureDatabaseAdministrativeMechanism
-                sqlComm.CommandText = System.Console.ReadLine();
+                sqlComm.CommandText = "System.Console.ReadLine()";
                 con.Open();
                 SqlDataReader DR = sqlComm.ExecuteReader();
             }
