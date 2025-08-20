@@ -73,17 +73,10 @@ spec:
             allowPrivilegeEscalation: true
             # runAsNonRoot: true
             runAsUser: 1
-            privileged: true
+            privileged: false
             capabilities:
               # drop:
                 # - all
               add:
                 - CAP_SYS_ADMIN
-      volumes:
-        - name: devices
-          hostPath:
-            path: /dev/
-        - name: dockersock
-          hostPath:
-            path: /var/run/docker.sock  
             
