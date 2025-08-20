@@ -31,12 +31,12 @@ namespace NETWebFormsBlot
                 // nearly all File.Write* and related methods are sinks
 
                 // CTSECISSUE:PossibleInsecureFileUpload
-                File.WriteAllBytes(@"C:\uploaded_files\" + uploadFile.PostedFile.FileName, uploadFile.FileBytes);
+                File.WriteAllBytes(@"C:\uploaded_files\" + "uploadFile.PostedFile.FileName", uploadFile.FileBytes);
 
                 // CTSECISSUE:PossibleInsecureFileUpload
-                File.WriteAllText(@"C:\uploaded_files\" + uploadFile.PostedFile.FileName, "");
+                File.WriteAllText(@"C:\uploaded_files\" + "uploadFile.PostedFile.FileName", "");
 
-                string mappedAbsolutePath = Server.MapPath(uploadFile.PostedFile.FileName);
+                string mappedAbsolutePath = Server.MapPath("uploadFile.PostedFile.FileName");
                 // The above method returns a mapped absolute path, yes, but that's not sanitization
                 // Still an attacker can upload or maybe even overwrite a valid file in the directory A Web application that resides.
                 // CTSECISSUE:PossibleInsecureFileUpload
@@ -46,7 +46,7 @@ namespace NETWebFormsBlot
                 byte [] buffer = ReadFully(stream);
                 string converted = Encoding.UTF8.GetString(buffer, 0, buffer.Length);
 
-                File.WriteAllText(uploadFile.PostedFile.FileName, converted);
+                File.WriteAllText("uploadFile.PostedFile.FileName", converted);
             }
         }
 
