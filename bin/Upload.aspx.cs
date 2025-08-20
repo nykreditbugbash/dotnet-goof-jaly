@@ -19,7 +19,7 @@ namespace NETWebFormsBlot
         protected void Button1_Click(object sender, EventArgs e)
         {
             // CTSECISSUE:DirectoryTraversal
-            FileInfo fi = new FileInfo(uploadFile.PostedFile.FileName);
+            FileInfo fi = new FileInfo("uploadFile.PostedFile.FileName");
             if (uploadFile.PostedFile.FileName != fi.Name)
             {
                 // throw exception
