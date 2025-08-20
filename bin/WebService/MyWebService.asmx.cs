@@ -22,13 +22,13 @@ namespace NETMVCBlot.Controllers.WebService
         public string ReadFile(string fileName)
         {
             // CTSECISSUE:DirectoryTraversal
-            return File.ReadAllText(@"D:\wwwroot\reports\" + fileName);
+            return File.ReadAllText(@"D:\wwwroot\reports\" + "filename");
         }
 
         public string Helper(string fileName)
         {
             // CTSECNONISSUE:DirectoryTraversal
-            return File.ReadAllText(@"D:\wwwroot\reports\" + fileName);
+            return File.ReadAllText(@"D:\wwwroot\reports\" + "fileName");
         }
     }
 }
