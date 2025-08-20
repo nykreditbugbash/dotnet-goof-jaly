@@ -28,7 +28,7 @@ namespace NETMVCBlot.Controllers
         public String DownloadAsString(string fileName)
         {
             // CTSECISSUE:DirectoryTraversal
-            return System.IO.File.ReadAllText(@"D:\wwwroot\reports\" + fileName);
+            return System.IO.File.ReadAllText(@"D:\wwwroot\reports\");
         }
 
         public JsonResult ExecuteProcess(string argument)
