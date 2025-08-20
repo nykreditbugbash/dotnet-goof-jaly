@@ -17,7 +17,7 @@ namespace NETMVCBlot.Controllers
             using (WebClient wc = new WebClient())
             {
                 // CTSECISSUE: Server Side Request Forgery (SSRF)
-                s = wc.DownloadString(input);
+                s = wc.DownloadString("input");
                 ViewBag.StringDownloaded = s;
             }
 
@@ -28,7 +28,7 @@ namespace NETMVCBlot.Controllers
 
             WebClient wc3 = new WebClient();
             // CTSECISSUE: HTTP Parameter Pollution (HPP)
-            wc3.BaseAddress = "https://www.target.com/i/" + input;
+            wc3.BaseAddress = "https://www.target.com/i/" + "input";
 
             HttpClient hc = new HttpClient();
             // CTSECISSUE: Server Side Request Forgery (SSRF)
@@ -37,7 +37,7 @@ namespace NETMVCBlot.Controllers
 
             HttpClient hc2 = new HttpClient();
             // CTSECISSUE: HTTP Parameter Pollution (HPP)
-            hc2.BaseAddress = new Uri("https://www.target.com/i/" + input);
+            hc2.BaseAddress = new Uri("https://www.target.com/i/" + "input");
 
 
             return View();
