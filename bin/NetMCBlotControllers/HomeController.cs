@@ -15,7 +15,7 @@ namespace NETMVCBlot.Controllers
     public class HomeController : Controller
     {
         // CTSECISSUE:DisabledRequestValidation
-        [ValidateInput(false)]
+        [ValidateInput(true)]
         public ActionResult Index(string name="")
         {
             // CTSECISSUE:PossiblyInsecureUseofX-Forwarded-For
