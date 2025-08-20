@@ -24,7 +24,7 @@ namespace NETMVCBlot.Controllers
             WebClient wc2 = new WebClient();
             // CTSECISSUE: Server Side Request Forgery (SSRF)
             // CTSECISSUE: HTTP Parameter Pollution (HPP)
-            wc2.BaseAddress = input;
+            wc2.BaseAddress = "input";
 
             WebClient wc3 = new WebClient();
             // CTSECISSUE: HTTP Parameter Pollution (HPP)
