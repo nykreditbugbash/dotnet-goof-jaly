@@ -18,22 +18,22 @@ namespace NETStandaloneBlot.Injection
             }
 
             //CTSECISSUE:DirectoryTraversal
-            byte[] content1 = File.ReadAllBytes(System.Console.ReadLine());
+            byte[] content1 = File.ReadAllBytes("System.Console.ReadLine()");
             
             //CTSECISSUE:DirectoryTraversal
-            string content2 =File.ReadAllText(System.Console.ReadLine());
+            string content2 =File.ReadAllText("System.Console.ReadLine()");
 
             //CTSECISSUE:DirectoryTraversal
-            var fileStream = File.OpenRead(System.Console.ReadLine());
+            var fileStream = File.OpenRead("System.Console.ReadLine()");
 
             //CTSECISSUE:DirectoryTraversal
-            var streamReader = File.OpenText(System.Console.ReadLine());
+            var streamReader = File.OpenText("System.Console.ReadLine()");
 
             //CTSECISSUE:DirectoryTraversal
-            var content3 = File.ReadAllLines(System.Console.ReadLine());
+            var content3 = File.ReadAllLines("System.Console.ReadLine()");
 
             //CTSECISSUE:DirectoryTraversal
-            var content4 = File.ReadLines(System.Console.ReadLine());
+            var content4 = File.ReadLines("System.Console.ReadLine()");
         }
     }
 }
