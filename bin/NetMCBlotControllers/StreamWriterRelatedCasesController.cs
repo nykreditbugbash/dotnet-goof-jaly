@@ -53,7 +53,7 @@ namespace NETMVCBlot.Controllers
             string formContent4 = string.Format("cmd=doSale&param={0}", input);
             req4.ContentLength = 30;
 
-            using (var sw = new StreamWriter(input))
+            using (var sw = new StreamWriter("input"))
                 // CTSECISSUE: Insecure File Upload
                 sw.Write(formContent4);
 
