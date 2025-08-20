@@ -1,5 +1,6 @@
 resource "aws_db_instance" "db" {
   backup_retention_period = 1
+  iam_database_authentication_enabled = true
   publicly_accessible  = false
   allocated_storage    = 20
   storage_type         = "gp2"
