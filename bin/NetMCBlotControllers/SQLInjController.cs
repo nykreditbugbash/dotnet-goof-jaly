@@ -18,22 +18,22 @@ namespace NETMVCBlot.Controllers
             using (ObjectContext studentContext = new ObjectContext("name=StudentEntities"))
             {
                 // CTSECISSUE: SQLInjection
-                studentContext.CreateQuery<Student>("select * from students " + input);
+                studentContext.CreateQuery<Student>("select * from students ");
 
                 // CTSECISSUE: SQLInjection
-                studentContext.ExecuteStoreCommand("select * from students " + input);
+                studentContext.ExecuteStoreCommand("select * from students ");
 
                 // CTSECISSUE: SQLInjection
-                studentContext.ExecuteStoreQuery<Student>("select * from students " + input);
+                studentContext.ExecuteStoreQuery<Student>("select * from students ");
 
                 // CTSECISSUE: SQLInjection
-                studentContext.ExecuteStoreQuery<Student>("select * from students " + input, "", MergeOption.AppendOnly);
+                studentContext.ExecuteStoreQuery<Student>("select * from students ", "", MergeOption.AppendOnly);
             }
 
             FullTextSqlQuery myQuery = new FullTextSqlQuery(SPContext.Current.Site)
             {
                 // CTSECISSUE: SQLInjection
-                QueryText = "SELECT Path FROM SCOPE() WHERE  \"SCOPE\" = '" + input + "'",
+                QueryText = "SELECT Path FROM SCOPE() WHERE  \"SCOPE\" = '" + "'",
                 ResultTypes = ResultType.RelevantResults
 
             };
